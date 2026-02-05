@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+    <script>
+        // Extract error info if present
+        const urlParams = new URLSearchParams(window.location.search);
+        const error = urlParams.get('error');
+        
+        // Redirect to app with failure
+        if (error) {
+            window.location.href = `myordr://oauth-failure?error=${encodeURIComponent(error)}`;
+        } else {
+            window.location.href = 'myordr://oauth-failure';
+        }
+    </script>
+</head>
+<body>
+    <p>Redirecting to app...</p>
+</body>
+</html>
